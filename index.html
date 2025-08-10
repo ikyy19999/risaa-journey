@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizky and Salma</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Risaa</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li class="nav-item"><a href="#story" class="nav-link">Story</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#notes" class="nav-link">Notes</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home">
+        <div class="home-content">
+            <h1 class="home-title">Forever & Always</h1>
+            <p class="home-subtitle">Our journey of love and laughter</p>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section">
+        <h2 class="section-title">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-date">June 03, 2024</div>
+                <div class="timeline-content">
+                    <h3>First Meeting</h3>
+                    <p>Our chats started on Telegram, just two strangers in a digital sea. But the moment our words connected, everything felt different like the world paused just for us.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-date">August 3, 2024</div>
+                <div class="timeline-content">
+                    <h3>First Date</h3>
+                    <p>A day spent wandering the streets of Bogor that turned into hours of laughter and connection. We talked and explored until the city lights faded into the night.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-date">August 11, 2025</div>
+                <div class="timeline-content">
+                    <h3>Officially</h3>
+                    <p>On August 11, 2024, we officially became a couple a new chapter of us began.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="section">
+        <h2 class="section-title">Our Story</h2>
+        <div class="story-content">
+            <p id="typed-text"></p>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <h2 class="section-title">Memory Lane</h2>
+        <div class="gallery-controls">
+            <select id="year-selector" class="year-selector">
+                <option value="">Select Year</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+            <button id="today-btn" class="today-btn">Show This Year</button>
+        </div>
+        <div id="calendar-container" class="calendar-container"></div>
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <div class="lightbox-content">
+                <div class="lightbox-nav">
+                    <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                </div>
+                <!-- Media container will be populated by JavaScript -->
+                <div id="media-container"></div>
+                <div class="lightbox-nav">
+                    <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="lightbox-caption"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes" class="section">
+        <h2 class="section-title">Leave a Note</h2>
+        <form id="note-form" class="note-form">
+            <div class="form-group">
+                <input type="text" id="name" class="form-input" placeholder=" " required>
+                <label for="name" class="form-label">Your Name</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" class="form-input" rows="4" placeholder=" " required></textarea>
+                <label for="message" class="form-label">Your Message</label>
+            </div>
+            <button type="submit" class="submit-btn">Send <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <div id="notification" class="notification">Thank you for your note!</div>
+    </section>
+
+    <!-- Welcome Popup -->
+    <div id="welcome-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>A Journey of Love: Rizky & Salma</h2>
+                <span class="popup-close">&times;</span>
+            </div>
+            <div class="popup-body">
+                <p>hii & welcome 🤍</p>
+                <p>welcome to our love story — a journey filled with sweet moments, heartfelt laughter, and endless memories 💕🌙</p>
+                <p>it's tender, a little messy, and perfectly us — from holding hands on quiet nights to laughing until our hearts overflow 🥰😂</p>
+                <p>stay cozy, because here, you're part of our story ✨</p>
+                <p class="signature">Rizky & Salma 🌸</p>
+                
+                <div class="popup-warning">
+                    <p>💻 For the best experience, we recommend viewing this on desktop mode or using a laptop/computer</p>
+                    <p>🐛 Found a bug?<br>
+                    Please email us at: <a href="mailto:support@rizkymaulana.web.id?subject=Bug%20in%20website">support@rizkymaulana.web.id</a><br>
+                    Subject: "Bug in website" + screenshot attached</p>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button id="popup-accept" class="popup-btn">Enter Our Journey ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
