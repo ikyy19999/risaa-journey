@@ -1,149 +1,373 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizky and Salma</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Rizky and Salma - Maintenance</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #5a3d4d;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff0f5 100%);
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #d46a8c;
+            text-shadow: 0 2px 8px rgba(212, 106, 140, 0.15);
+        }
+
+        /* --- Maintenance Container --- */
+        .maintenance-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 30px 70px rgba(212, 106, 140, 0.2);
+            border: 1px solid rgba(212, 106, 140, 0.1);
+            max-width: 650px;
+            width: 100%;
+            animation: fadeInUp 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .maintenance-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #d46a8c, #f8a5c2);
+            border-radius: 30px 30px 0 0;
+        }
+
+        /* --- Logo --- */
+        .maintenance-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #d46a8c;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #d46a8c, #f8a5c2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* --- Icon --- */
+        .maintenance-icon {
+            font-size: 5rem;
+            color: #f8a5c2;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        /* --- Title & Message --- */
+        .maintenance-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .maintenance-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .maintenance-message p {
+            margin-bottom: 15px;
+        }
+
+        /* --- Progress Bar --- */
+        .progress-container {
+            width: 100%;
+            background-color: #f0e0e6;
+            border-radius: 10px;
+            margin: 30px 0;
+            height: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 65%; /* Sesuaikan persentase sesuai kebutuhan */
+            background: linear-gradient(90deg, #d46a8c, #f8a5c2);
+            border-radius: 10px;
+            animation: progressAnimation 3s ease-in-out infinite alternate;
+        }
+
+        /* --- Special Announcement Box --- */
+        .announcement-box {
+            background: linear-gradient(135deg, rgba(212, 106, 140, 0.1) 0%, rgba(248, 165, 194, 0.2) 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 106, 140, 0.2);
+            box-shadow: 0 10px 30px rgba(212, 106, 140, 0.1);
+        }
+
+        .announcement-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d46a8c" opacity="0.05" d="M50,15 L65,45 L95,45 L72,65 L80,95 L50,75 L20,95 L28,65 L5,45 L35,45 Z"/></svg>');
+            background-size: 60px;
+        }
+
+        .announcement-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d46a8c;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(212, 106, 140, 0.2);
+            position: relative;
+            display: inline-block;
+        }
+
+        .announcement-date::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #d46a8c, #f8a5c2);
+            border-radius: 3px;
+        }
+
+        .announcement-text p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #5a3d4d;
+            line-height: 1.6;
+        }
+
+        .announcement-text p:first-child {
+            font-weight: 600;
+            color: #d46a8c;
+            font-size: 1.3rem;
+        }
+
+        .clue {
+            font-family: 'Courier New', monospace;
+            background-color: rgba(212, 106, 140, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1rem;
+            color: #d46a8c;
+            font-weight: 600;
+            border: 1px dashed #d46a8c;
+        }
+
+        /* --- Contact Info --- */
+        .contact-info {
+            font-size: 1rem;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #d46a8c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #f8a5c2;
+            text-decoration: underline;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes progressAnimation {
+            0% {
+                width: 40%;
+            }
+            100% {
+                width: 80%;
+            }
+        }
+
+        /* --- Responsive Design --- */
+        @media screen and (max-width: 768px) {
+            .maintenance-container {
+                padding: 40px 25px;
+            }
+
+            .maintenance-logo {
+                font-size: 2.5rem;
+                margin-bottom: 25px;
+            }
+
+            .maintenance-icon {
+                font-size: 4rem;
+                margin-bottom: 25px;
+            }
+
+            .maintenance-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .maintenance-message {
+                font-size: 1.1rem;
+            }
+            
+            .announcement-date {
+                font-size: 1.8rem;
+            }
+            
+            .announcement-text p:first-child {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .maintenance-container {
+                padding: 30px 20px;
+            }
+
+            .maintenance-logo {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .maintenance-icon {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+
+            .maintenance-title {
+                font-size: 1.8rem;
+            }
+
+            .maintenance-message {
+                font-size: 1rem;
+            }
+            
+            .clue {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            
+            .announcement-text p:first-child {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">Risaa</div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#timeline" class="nav-link">Timeline</a></li>
-                <li class="nav-item"><a href="#story" class="nav-link">Story</a></li>
-                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="#notes" class="nav-link">Notes</a></li>
-            </ul>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <div class="maintenance-container">
+        <!-- <div class="maintenance-logo">Risaa</div> -->
+        <!-- <div class="maintenance-icon">
+            <i class="fas fa-gift"></i>
+        </div> -->
+        <h1 class="maintenance-title">Under Maintenance</h1>
+        <div class="maintenance-message">
+            <p>Haii</p>
+            <p>We’re giving it a little TLC so when you open it later, the vibes will be on point ✨</p>
         </div>
-    </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="section home">
-        <div class="home-content">
-            <h1 class="home-title">Forever & Always</h1>
-            <p class="home-subtitle">Our journey of love and laughter</p>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="section">
-        <h2 class="section-title">Our Journey</h2>
-        <div class="timeline">
-            <div class="timeline-item left">
-                <div class="timeline-date">June 03, 2024</div>
-                <div class="timeline-content">
-                    <h3>First Meeting</h3>
-                    <p>Our chats started on Telegram, just two strangers in a digital sea. But the moment our words connected, everything felt different like the world paused just for us.</p>
-                </div>
-            </div>
-            <div class="timeline-item right">
-                <div class="timeline-date">August 3, 2024</div>
-                <div class="timeline-content">
-                    <h3>First Date</h3>
-                    <p>A day spent wandering the streets of Bogor that turned into hours of laughter and connection. We talked and explored until the city lights faded into the night.</p>
-                </div>
-            </div>
-            <div class="timeline-item left">
-                <div class="timeline-date">August 11, 2025</div>
-                <div class="timeline-content">
-                    <h3>Officially</h3>
-                    <p>On August 11, 2024, we officially became a couple a new chapter of us began.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Story Section -->
-    <section id="story" class="section">
-        <h2 class="section-title">Our Story</h2>
-        <div class="story-content">
-            <p id="typed-text"></p>
-        </div>
-    </section>
-    
-    <!-- Gallery Section -->
-    <section id="gallery" class="section">
-        <h2 class="section-title">Memory Lane</h2>
-        <div class="gallery-controls">
-            <select id="year-selector" class="year-selector">
-                <option value="">Select Year</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-            </select>
-            <button id="today-btn" class="today-btn">Show This Year</button>
-        </div>
-        <div id="calendar-container" class="calendar-container"></div>
-        <div id="lightbox" class="lightbox">
-            <span class="lightbox-close">&times;</span>
-            <div class="lightbox-content">
-                <div class="lightbox-nav">
-                    <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                </div>
-                <!-- Media container will be populated by JavaScript -->
-                <div id="media-container"></div>
-                <div class="lightbox-nav">
-                    <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="lightbox-caption"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Notes Section -->
-    <section id="notes" class="section">
-        <h2 class="section-title">Leave a Note</h2>
-        <form id="note-form" class="note-form">
-            <div class="form-group">
-                <input type="text" id="name" class="form-input" placeholder=" " required>
-                <label for="name" class="form-label">Your Name</label>
-            </div>
-            <div class="form-group">
-                <textarea id="message" class="form-input" rows="4" placeholder=" " required></textarea>
-                <label for="message" class="form-label">Your Message</label>
-            </div>
-            <button type="submit" class="submit-btn">Send <i class="fas fa-paper-plane"></i></button>
-        </form>
-        <div id="notification" class="notification">Thank you for your note!</div>
-    </section>
-
-    <!-- Welcome Popup -->
-    <div id="welcome-popup" class="popup-overlay">
-        <div class="popup-content">
-            <div class="popup-header">
-                <h2>A Journey of Love: Rizky & Salma</h2>
-                <span class="popup-close">&times;</span>
-            </div>
-            <div class="popup-body">
-                <p>hii & welcome 🤍</p>
-                <p>welcome to our love story — a journey filled with sweet moments, heartfelt laughter, and endless memories 💕🌙</p>
-                <p>it's tender, a little messy, and perfectly us — from holding hands on quiet nights to laughing until our hearts overflow 🥰😂</p>
-                <p>stay cozy, because here, you're part of our story ✨</p>
-                <p class="signature">Rizky & Salma 🌸</p>
+        <!-- Special Announcement Box -->
+        <div class="announcement-box">
+            <div class="announcement-date">August 11</div>
+            <div class="announcement-text">
+                <p>Our 1st Anniversary! 💖</p>
+                <p>We’re dropping something super special to celebrate us, plus a <strong>giveaway</strong> that’s no joke 👀🔥</p>
                 
-                <div class="popup-warning">
-                    <p>💻 For the best experience, we recommend viewing this on desktop mode or using a laptop/computer</p>
-                    <p>🐛 Found a bug?<br>
-                    Please email us at: <a href="mailto:support@rizkymaulana.web.id?subject=Bug%20in%20website">support@rizkymaulana.web.id</a><br>
-                    Subject: "Bug in website" + screenshot attached</p>
-                </div>
+                <!-- <div class="clue">
+                    <p>Roblox Clue:</p>
+                    <p>"Where our avatars get their swag on,<br>
+                    Buying cool outfits until dawn,<br>
+                    What's the name of this virtual shop?<br>
+                    That's your key to unlock the loot drop!"</p>
+                </div> -->
+                
+                <p>Stay tuned, when we’re back, it’s gonna be a whole moment 💌</p>
+                <!-- <p>#AnniversaryVibes #RobloxGiveaway</p> -->
             </div>
-            <div class="popup-footer">
-                <button id="popup-accept" class="popup-btn">Enter Our Journey ✨</button>
-            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="contact-info">
+            <p>Need to reach us? Slide into our DMs: <a href="mailto:support@rizkymaulana.web.id?subject=Maintenance">support@rizkymaulana.web.id</a></p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">Love always,<br>Rizky & Salma 💕</p>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
