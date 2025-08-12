@@ -896,7 +896,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navMenu) {
         const newNavItem = document.createElement('li');
         newNavItem.className = 'nav-item';
-        newNavItem.innerHTML = '<a href="#secret-mailbox" class="nav-link">Secret Mailbox</a>';
+        newNavItem.innerHTML = '<a href="#secret-mailbox" class="nav-link">Secret Box</a>';
         // Masukkan sebelum "Notes"
         const notesItem = navMenu.querySelector('a[href="#notes"]').parentElement;
         navMenu.insertBefore(newNavItem, notesItem);
