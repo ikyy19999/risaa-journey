@@ -1,4 +1,4 @@
-/* --- Reset & Base Styles ---
+--- Reset & Base Styles ---
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +21,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
 /* --- Navbar --- */
 .navbar {
     position: fixed;
@@ -100,7 +99,6 @@ a {
     transition: 0.4s;
     border-radius: 3px;
 }
-
 /* --- Sections --- */
 .section {
     padding: 100px 2rem;
@@ -145,7 +143,6 @@ a {
     border-radius: 2px;
     box-shadow: 0 3px 10px rgba(212, 106, 140, 0.3);
 }
-
 /* --- Home Section --- */
 .home {
     height: 100vh;
@@ -194,7 +191,6 @@ a {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     color: #fff;
 }
-
 /* --- Timeline Section --- */
 .timeline {
     position: relative;
@@ -202,7 +198,6 @@ a {
     margin: 0 auto;
     padding: 3rem 0;
 }
-
 .timeline::before {
     content: '';
     position: absolute;
@@ -215,7 +210,6 @@ a {
     border-radius: 3px;
     box-shadow: 0 0 15px rgba(212, 106, 140, 0.3);
 }
-
 .timeline-item {
     position: relative;
     width: 50%;
@@ -225,20 +219,16 @@ a {
     transform: translateY(40px);
     transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .timeline-item.left {
     left: 0;
 }
-
 .timeline-item.right {
     left: 50%;
 }
-
 .timeline-item.in-view {
     opacity: 1;
     transform: translateY(0);
 }
-
 .timeline-date {
     position: absolute;
     top: 25px;
@@ -255,20 +245,16 @@ a {
     transition: all 0.4s ease;
     font-family: 'Playfair Display', serif;
 }
-
 .timeline-item.left .timeline-date {
     right: -75px;
 }
-
 .timeline-item.right .timeline-date {
     left: -75px;
 }
-
 .timeline-date:hover {
     transform: scale(1.08);
     box-shadow: 0 8px 25px rgba(212, 106, 140, 0.4);
 }
-
 .timeline-content {
     position: relative;
     background: rgba(255, 255, 255, 0.95);
@@ -280,12 +266,10 @@ a {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(212, 106, 140, 0.1);
 }
-
 .timeline-content:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 50px rgba(212, 106, 140, 0.25);
 }
-
 .timeline-content h3 {
     margin-bottom: 20px;
     color: #d46a8c;
@@ -293,7 +277,6 @@ a {
     position: relative;
     padding-bottom: 15px;
 }
-
 .timeline-content h3::after {
     content: '';
     position: absolute;
@@ -304,13 +287,11 @@ a {
     background: linear-gradient(90deg, #d46a8c, #f8a5c2);
     border-radius: 2px;
 }
-
 .timeline-content p {
     margin-bottom: 0;
     line-height: 1.8;
     color: #5a3d4d;
 }
-
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -323,15 +304,12 @@ a {
     z-index: 1;
     box-shadow: 0 0 15px rgba(212, 106, 140, 0.3);
 }
-
 .timeline-item.left::before {
     right: -11px;
 }
-
 .timeline-item.right::before {
     left: -11px;
 }
-
 /* --- Story Section --- */
 .story-content {
     display: flex;
@@ -386,7 +364,6 @@ a {
 .story-image:hover {
     transform: scale(1.08);
 }
-
 /* --- Gallery Section --- */
 .gallery-controls {
     display: flex;
@@ -396,7 +373,6 @@ a {
     margin-bottom: 40px;
     flex-wrap: wrap;
 }
-
 .year-selector {
     padding: 14px 30px;
     border-radius: 35px;
@@ -411,14 +387,12 @@ a {
     min-width: 180px;
     font-weight: 500;
 }
-
 .year-selector:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(248, 165, 194, 0.3);
     background: linear-gradient(135deg, #d46a8c 0%, #f8a5c2 100%);
     color: white;
 }
-
 .today-btn {
     padding: 14px 30px;
     border-radius: 35px;
@@ -432,22 +406,18 @@ a {
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     box-shadow: 0 5px 20px rgba(212, 106, 140, 0.3);
 }
-
 .today-btn:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 30px rgba(212, 106, 140, 0.4);
 }
-
 .today-btn:active {
     transform: translateY(2px);
 }
-
 .calendar-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 50px;
 }
-
 .calendar-month {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
@@ -461,7 +431,6 @@ a {
     overflow: hidden;
     border: 1px solid rgba(212, 106, 140, 0.1);
 }
-
 .calendar-month::before {
     content: '';
     position: absolute;
@@ -472,12 +441,10 @@ a {
     background: linear-gradient(90deg, #d46a8c, #f8a5c2);
     border-radius: 30px 30px 0 0;
 }
-
 .calendar-month.visible {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
-
 .calendar-month h3 {
     text-align: center;
     margin-bottom: 30px;
@@ -485,7 +452,6 @@ a {
     font-size: 2rem;
     letter-spacing: 1.5px;
 }
-
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -493,7 +459,6 @@ a {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .calendar-day {
     aspect-ratio: 1;
     display: flex;
@@ -508,14 +473,12 @@ a {
     cursor: default;
     box-shadow: 0 3px 8px rgba(212, 106, 140, 0.05);
 }
-
 .calendar-day.header {
     background: transparent;
     color: #f8a5c2;
     font-weight: 600;
     font-size: 0.9rem;
 }
-
 .calendar-day.today {
     background: linear-gradient(135deg, #d46a8c 0%, #f8a5c2 100%);
     color: white;
@@ -523,13 +486,11 @@ a {
     box-shadow: 0 5px 20px rgba(212, 106, 140, 0.4);
     transform: scale(1.15);
 }
-
 .calendar-day.event {
     background-color: #fdf6f8;
     color: #5a3d4d;
     position: relative;
 }
-
 .calendar-day.event::after {
     content: '';
     position: absolute;
@@ -539,7 +500,6 @@ a {
     background-color: #d46a8c;
     border-radius: 50%;
 }
-
 /* Styles for different media types */
 .calendar-day.has-photo {
     background: linear-gradient(135deg, #d46a8c 0%, #f8a5c2 100%);
@@ -549,7 +509,6 @@ a {
     box-shadow: 0 5px 20px rgba(212, 106, 140, 0.3);
     z-index: 1;
 }
-
 .calendar-day.has-video {
     background: linear-gradient(135deg, #8c6ad4 0%, #c2a5f8 100%);
     color: white;
@@ -558,7 +517,6 @@ a {
     box-shadow: 0 5px 20px rgba(140, 106, 212, 0.3);
     z-index: 1;
 }
-
 .calendar-day.has-mixed {
     background: linear-gradient(135deg, #d46a8c 0%, #8c6ad4 50%, #f8a5c2 100%);
     color: white;
@@ -567,20 +525,17 @@ a {
     box-shadow: 0 5px 20px rgba(212, 106, 140, 0.3);
     z-index: 1;
 }
-
 .calendar-day.has-photo:hover,
 .calendar-day.has-video:hover,
 .calendar-day.has-mixed:hover {
     transform: translateY(-5px) scale(1.15);
     box-shadow: 0 10px 30px rgba(212, 106, 140, 0.5);
 }
-
 .calendar-day.has-photo:active,
 .calendar-day.has-video:active,
 .calendar-day.has-mixed:active {
     transform: scale(0.95);
 }
-
 .photo-count {
     position: absolute;
     top: -8px;
@@ -598,18 +553,15 @@ a {
     font-weight: 600;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
-
 .calendar-day.has-video .photo-count {
     color: #8c6ad4;
     border: 2px solid #c2a5f8;
 }
-
 .calendar-day.has-mixed .photo-count {
     color: #d46a8c;
     border: 2px solid #c2a5f8;
     background: linear-gradient(135deg, #fff 0%, #f8a5c2 50%, #c2a5f8 100%);
 }
-
 .lightbox {
     display: none;
     position: fixed;
@@ -623,7 +575,6 @@ a {
     background-color: rgba(0,0,0,0.95);
     backdrop-filter: blur(8px);
 }
-
 .lightbox-content {
     margin: auto;
     display: flex;
@@ -634,7 +585,6 @@ a {
     position: relative;
     gap: 40px;
 }
-
 #media-container {
     display: flex;
     justify-content: center;
@@ -642,7 +592,6 @@ a {
     width: 100%;
     max-height: 85vh;
 }
-
 #lightbox-img {
     max-width: 100%;
     max-height: 85vh;
@@ -651,7 +600,6 @@ a {
     box-shadow: 0 30px 70px rgba(0,0,0,0.6);
     display: none;
 }
-
 .lightbox-video {
     max-width: 100%;
     max-height: 85vh;
@@ -660,7 +608,6 @@ a {
     box-shadow: 0 30px 70px rgba(0,0,0,0.6);
     outline: none;
 }
-
 .lightbox-caption {
     position: absolute;
     bottom: -50px;
@@ -673,7 +620,6 @@ a {
     background: rgba(0,0,0,0.6);
     border-radius: 15px;
 }
-
 .lightbox-close {
     position: absolute;
     top: 25px;
@@ -685,17 +631,14 @@ a {
     transition: all 0.4s ease;
     z-index: 2001;
 }
-
 .lightbox-close:hover {
     transform: rotate(90deg);
     color: #f8a5c2;
 }
-
 .lightbox-nav {
     display: flex;
     align-items: center;
 }
-
 .lightbox-nav button {
     background: rgba(255, 255, 255, 0.25);
     border: none;
@@ -711,12 +654,10 @@ a {
     justify-content: center;
     backdrop-filter: blur(5px);
 }
-
 .lightbox-nav button:hover {
     background: rgba(255, 255, 255, 0.4);
     transform: scale(1.15);
 }
-
 /* --- Year & Month Styling --- */
 .month-title {
     text-align: center;
@@ -725,7 +666,6 @@ a {
     font-size: 1.8rem;
     font-weight: 600;
 }
-
 .empty-state {
     text-align: center;
     padding: 60px 25px;
@@ -733,7 +673,6 @@ a {
     font-style: italic;
     font-size: 1.2rem;
 }
-
 .year-title {
     text-align: center;
     margin: 30px 0 50px;
@@ -743,7 +682,6 @@ a {
     letter-spacing: 1px;
     text-shadow: 0 3px 10px rgba(212, 106, 140, 0.2);
 }
-
 .month-container {
     margin-bottom: 60px;
     padding: 30px;
@@ -753,12 +691,10 @@ a {
     border: 1px solid rgba(212, 106, 140, 0.15);
     transition: all 0.4s ease;
 }
-
 .month-container:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(212, 106, 140, 0.2);
 }
-
 .no-photos {
     text-align: center;
     padding: 30px;
@@ -769,7 +705,6 @@ a {
     margin-top: 25px;
     font-size: 1.1rem;
 }
-
 /* --- Notes Section --- */
 .note-form {
     max-width: 750px;
@@ -879,7 +814,6 @@ a {
 .notification.show {
     top: 50px;
 }
-
 /* --- Welcome Popup --- */
 .popup-overlay {
     position: fixed;
@@ -897,12 +831,10 @@ a {
     visibility: hidden;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
 .popup-overlay.show {
     opacity: 1;
     visibility: visible;
 }
-
 .popup-content {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
@@ -917,11 +849,9 @@ a {
     transform: scale(0.8);
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
 .popup-overlay.show .popup-content {
     transform: scale(1);
 }
-
 .popup-header {
     background: linear-gradient(135deg, #d46a8c 0%, #f8a5c2 100%);
     padding: 30px;
@@ -929,14 +859,12 @@ a {
     text-align: center;
     position: relative;
 }
-
 .popup-header h2 {
     color: white;
     margin: 0;
     font-size: 1.8rem;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-
 .popup-close {
     position: absolute;
     top: 20px;
@@ -952,27 +880,22 @@ a {
     justify-content: center;
     border-radius: 50%;
 }
-
 .popup-close:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: rotate(90deg);
 }
-
 .popup-body {
     padding: 30px;
     color: #5a3d4d;
     line-height: 1.8;
 }
-
 .popup-body p {
     margin-bottom: 20px;
     font-size: 1.1rem;
 }
-
 .popup-body p:last-child {
     margin-bottom: 0;
 }
-
 .signature {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
@@ -981,7 +904,6 @@ a {
     text-align: center;
     margin: 25px 0;
 }
-
 .popup-warning {
     background: rgba(248, 165, 194, 0.1);
     border-left: 4px solid #d46a8c;
@@ -989,27 +911,22 @@ a {
     border-radius: 15px;
     margin-top: 25px;
 }
-
 .popup-warning p {
     margin-bottom: 15px;
     font-size: 0.95rem;
 }
-
 .popup-warning a {
     color: #d46a8c;
     text-decoration: underline;
     font-weight: 600;
 }
-
 .popup-warning a:hover {
     color: #f8a5c2;
 }
-
 .popup-footer {
     padding: 0 30px 30px 30px;
     text-align: center;
 }
-
 .popup-btn {
     background: linear-gradient(135deg, #d46a8c 0%, #f8a5c2 100%);
     color: white;
@@ -1022,16 +939,13 @@ a {
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     box-shadow: 0 8px 25px rgba(212, 106, 140, 0.3);
 }
-
 .popup-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(212, 106, 140, 0.4);
 }
-
 .popup-btn:active {
     transform: translateY(0);
 }
-
 /* Anniversary Box Styles */
 .anniversary-box {
     background: linear-gradient(135deg, rgba(212, 106, 140, 0.1) 0%, rgba(248, 165, 194, 0.2) 100%);
@@ -1044,7 +958,6 @@ a {
     border: 1px solid rgba(212, 106, 140, 0.2);
     box-shadow: 0 10px 30px rgba(212, 106, 140, 0.1);
 }
-
 .anniversary-box::before {
     content: '';
     position: absolute;
@@ -1056,7 +969,6 @@ a {
     background-size: 80px;
     opacity: 0.3;
 }
-
 .anniversary-date {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
@@ -1067,7 +979,6 @@ a {
     position: relative;
     display: inline-block;
 }
-
 .anniversary-date::after {
     content: '';
     position: absolute;
@@ -1079,19 +990,16 @@ a {
     background: linear-gradient(90deg, #d46a8c, #f8a5c2);
     border-radius: 3px;
 }
-
 .anniversary-text p {
     margin: 10px 0;
     font-size: 1.1rem;
     color: #5a3d4d;
     line-height: 1.6;
 }
-
 .anniversary-text p:first-child {
     font-weight: 600;
     color: #d46a8c;
 }
-
 .anniversary-decoration {
     margin-top: 15px;
     display: flex;
@@ -1102,7 +1010,6 @@ a {
     opacity: 0.7;
     animation: pulse 2s infinite;
 }
-
 /* --- Animations --- */
 @keyframes parallax {
     0% { background-position: 45% 45%; }
@@ -1158,7 +1065,6 @@ a {
     0%, 100% { transform: translateY(0) rotate(-5deg); }
     50% { transform: translateY(-50px) rotate(5deg); }
 }
-
 /* --- Responsive Design --- */
 @media screen and (max-width: 1024px) {
     .home-title {
@@ -1171,7 +1077,6 @@ a {
         padding: 80px 1.5rem;
     }
 }
-
 @media screen and (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -1216,78 +1121,63 @@ a {
     .home-subtitle {
         font-size: 1.6rem;
     }
-    
     /* Timeline Responsive */
     .timeline::before {
         left: 35px;
     }
-    
     .timeline-item {
         width: 100%;
         padding-left: 80px;
         padding-right: 30px;
     }
-    
     .timeline-item.right {
         left: 0;
     }
-    
     .timeline-item.left .timeline-date,
     .timeline-item.right .timeline-date {
         left: 0;
         right: auto;
         top: -35px;
     }
-    
     .timeline-item::before {
         left: 25px;
     }
-    
     /* Gallery Responsive */
     .gallery-controls {
         flex-direction: column;
         gap: 20px;
     }
-    
     .year-selector, .today-btn {
         width: 90%;
         padding: 16px;
         font-size: 1.2rem;
     }
-    
     .month-container {
         padding: 20px;
         margin-bottom: 40px;
     }
-    
     .calendar-grid {
         gap: 8px;
     }
-    
     .calendar-day {
         font-size: 0.9rem;
     }
-    
     .year-title {
         font-size: 2.5rem;
         margin: 20px 0 40px;
     }
-    
     .month-title {
         font-size: 1.6rem;
         margin: 25px 0 15px;
     }
-    
     .calendar-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
     .lightbox-content {
         flex-direction: column;
         gap: 25px;
     }
-    
     .lightbox-nav {
         position: absolute;
         top: 50%;
@@ -1296,14 +1186,12 @@ a {
         padding: 0 35px;
         box-sizing: border-box;
     }
-    
     .lightbox-nav button {
         position: relative;
         z-index: 2001;
         width: 55px;
         height: 55px;
     }
-    
     .lightbox-caption {
         position: relative;
         bottom: 0;
@@ -1311,74 +1199,59 @@ a {
         font-size: 1.1rem;
         padding: 18px;
     }
-    
     .note-form {
         padding: 40px 25px;
     }
-    
     #typed-text {
         font-size: 1.2rem;
         padding: 2rem;
     }
-    
     .section-title {
         font-size: 2.3rem;
     }
-    
     .notification {
         padding: 20px 30px;
         font-size: 1.1rem;
         max-width: 95%;
     }
-    
     /* Popup Responsive */
     .popup-content {
         width: 95%;
         margin: 20px;
     }
-    
     .popup-header {
         padding: 25px 20px;
     }
-    
     .popup-header h2 {
         font-size: 1.5rem;
     }
-    
     .popup-body {
         padding: 25px 20px;
     }
-    
     .popup-body p {
         font-size: 1rem;
         margin-bottom: 15px;
     }
-    
     .signature {
         font-size: 1.2rem;
         margin: 20px 0;
     }
-    
     .popup-warning {
         padding: 15px;
         margin-top: 20px;
     }
-    
     .popup-warning p {
         font-size: 0.9rem;
     }
-    
     .popup-footer {
         padding: 0 20px 25px 20px;
     }
-    
     .popup-btn {
         padding: 14px 30px;
         font-size: 1rem;
         width: 100%;
     }
 }
-
 @media screen and (max-width: 480px) {
     .home-title {
         font-size: 2.8rem;
@@ -1424,62 +1297,50 @@ a {
         padding: 15px 20px;
         font-size: 1rem;
     }
-    
     /* Popup Mobile */
     .popup-header h2 {
         font-size: 1.3rem;
     }
-    
     .popup-body p {
         font-size: 0.95rem;
     }
-    
     .signature {
         font-size: 1.1rem;
     }
-    
     .popup-warning p {
         font-size: 0.85rem;
     }
 }
-
 /* Untuk webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
     background: transparent;
 }
-
 /* Untuk Firefox */
 html {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
-
 /* Alternative method - hide scrollbar tapi tetap bisa scroll */
 body::-webkit-scrollbar {
     display: none;
 }
-
 body {
     -ms-overflow-style: none;  /* IE dan Edge */
     scrollbar-width: none;  /* Firefox */
 }
-
 /* Untuk popup dan lightbox juga */
 .popup-content::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
-
 .lightbox::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
-
 /* Floating Hearts Background */
 body::after {
     content: "";
@@ -1493,7 +1354,6 @@ body::after {
     animation: floatHearts 20s linear infinite;
     z-index: -1;
 }
-
 /* Polaroid Animation */
 .polaroid-animation {
     position: absolute;
@@ -1509,8 +1369,153 @@ body::after {
     animation: floatPolaroid 15s var(--delay) infinite ease-in-out;
     opacity: 0.7;
 }
-
 /* Custom Cursor */
 .nav-link, .calendar-day.has-photo, .popup-btn {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23d46a8c"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'), auto;
-} */
+}
+/* --- Tab Navigation --- */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding: 5px;
+    box-shadow: 0 5px 15px rgba(212, 106, 140, 0.1);
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    background: transparent;
+    color: #5a3d4d;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #d46a8c 0%, #f8a5c2 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(212, 106, 140, 0.3);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* --- Voice Note Styles --- */
+.voice-recording-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.recording-indicator {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.recording-indicator.show {
+    display: flex;
+}
+
+.recording-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ff4757;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+.recording-text {
+    font-weight: 500;
+    color: #d46a8c;
+}
+
+.audio-player {
+    margin: 20px 0;
+}
+
+.voice-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.voice-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.voice-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.record-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.record-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.stop-btn {
+    background: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(243, 104, 224, 0.3);
+}
+
+.stop-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(243, 104, 224, 0.4);
+}
+
+.play-btn {
+    background: linear-gradient(135deg, #1dd1a1 0%, #10ac84 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(29, 209, 161, 0.3);
+}
+
+.play-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(29, 209, 161, 0.4);
+}
+
+#send-voice-btn {
+    margin-top: 20px;
+}
+
+#send-voice-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
