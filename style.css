@@ -1,4 +1,4 @@
-/* --- Reset & Base Styles ---
+--- Reset & Base Styles ---
 * {
     margin: 0;
     padding: 0;
@@ -218,6 +218,7 @@ a {
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer; /* Tambahan untuk interaktivitas */
 }
 .timeline-item.left {
     left: 0;
@@ -228,6 +229,32 @@ a {
 .timeline-item.in-view {
     opacity: 1;
     transform: translateY(0);
+}
+/* Tambahan untuk Timeline Interaktif Dinamis */
+.timeline-item.in-view:hover .timeline-content {
+    background: rgba(255, 245, 245, 0.98);
+    border: 1px solid #f8a5c2;
+}
+.timeline-item.in-view .timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #d46a8c;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.timeline-item.left.in-view .timeline-content::before {
+    content: "\f061"; /* fa-arrow-right */
+}
+.timeline-item.right.in-view .timeline-content::before {
+    content: "\f060"; /* fa-arrow-left */
+}
+.timeline-item.in-view:hover .timeline-content::before {
+    opacity: 1;
 }
 .timeline-date {
     position: absolute;
@@ -1385,7 +1412,6 @@ body::after {
     max-width: 750px;
     margin: 0 auto 30px;
 }
-
 .tab-btn {
     flex: 1;
     padding: 15px 20px;
@@ -1399,38 +1425,31 @@ body::after {
     border-radius: 25px;
     transition: all 0.3s ease;
 }
-
 .tab-btn.active {
     background: linear-gradient(135deg, #d46a8c 0%, #f8a5c2 100%);
     color: white;
     box-shadow: 0 5px 15px rgba(212, 106, 140, 0.3);
 }
-
 .tab-content {
     display: none;
 }
-
 .tab-content.active {
     display: block;
 }
-
 /* --- Voice Note Styles --- */
 .voice-recording-container {
     margin: 30px 0;
     text-align: center;
 }
-
 .recording-indicator {
     display: none;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
 }
-
 .recording-indicator.show {
     display: flex;
 }
-
 .recording-dot {
     width: 12px;
     height: 12px;
@@ -1439,16 +1458,13 @@ body::after {
     margin-right: 10px;
     animation: pulse 1.5s infinite;
 }
-
 .recording-text {
     font-weight: 500;
     color: #d46a8c;
 }
-
 .audio-player {
     margin: 20px 0;
 }
-
 .voice-controls {
     display: flex;
     justify-content: center;
@@ -1456,7 +1472,6 @@ body::after {
     flex-wrap: wrap;
     margin: 20px 0;
 }
-
 .voice-btn {
     padding: 12px 25px;
     border: none;
@@ -1470,52 +1485,247 @@ body::after {
     align-items: center;
     gap: 8px;
 }
-
 .voice-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
-
 .record-btn {
     background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
     color: white;
     box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
 }
-
 .record-btn:hover:not(:disabled) {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
 }
-
 .stop-btn {
     background: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
     color: white;
     box-shadow: 0 5px 15px rgba(243, 104, 224, 0.3);
 }
-
 .stop-btn:hover:not(:disabled) {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(243, 104, 224, 0.4);
 }
-
 .play-btn {
     background: linear-gradient(135deg, #1dd1a1 0%, #10ac84 100%);
     color: white;
     box-shadow: 0 5px 15px rgba(29, 209, 161, 0.3);
 }
-
 .play-btn:hover:not(:disabled) {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(29, 209, 161, 0.4);
 }
-
 #send-voice-btn {
     margin-top: 20px;
 }
-
 #send-voice-btn:disabled {
     background: #cccccc;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
-} */
+}
+
+/* --- Secret Mailbox --- */
+.popup-overlay#secret-mailbox-popup {
+    z-index: 10000; /* Lebih tinggi dari welcome popup */
+}
+.secret-mailbox-content {
+    max-width: 700px;
+    width: 90%;
+}
+.secret-mailbox-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.secret-message {
+    background: rgba(248, 165, 194, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid #d46a8c;
+}
+.secret-message:last-child {
+    margin-bottom: 0;
+}
+.secret-message h3 {
+    color: #d46a8c;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+.secret-message p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* --- Playlist --- */
+.playlist-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 15px 40px rgba(212, 106, 140, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 106, 140, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Love Facts --- */
+.love-facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.fact-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(212, 106, 140, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 106, 140, 0.1);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+.fact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(212, 106, 140, 0.2);
+}
+.fact-card h3 {
+    color: #d46a8c;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+.fact-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* --- Slideshow Button --- */
+.slideshow-trigger {
+    text-align: center;
+    margin: 40px 0;
+}
+.slideshow-trigger .submit-btn {
+    background: linear-gradient(135deg, #8c6ad4 0%, #c2a5f8 100%); /* Warna berbeda untuk slideshow */
+    box-shadow: 0 12px 35px rgba(140, 106, 212, 0.4);
+}
+.slideshow-trigger .submit-btn:hover {
+    box-shadow: 0 18px 45px rgba(140, 106, 212, 0.5);
+}
+
+/* --- Slideshow --- */
+.slideshow-overlay {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.95);
+    backdrop-filter: blur(5px);
+}
+.slideshow-content {
+    position: relative;
+    background-color: transparent;
+    margin: auto;
+    padding: 20px;
+    width: 95%;
+    max-width: 1000px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+.slideshow-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#slideshow-media-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slideshow-media {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.slideshow-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.2rem;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
+.slideshow-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+.slideshow-nav-btn {
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+.slideshow-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+.slideshow-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 3001;
+}
+.slideshow-close:hover {
+    transform: rotate(90deg);
+    color: #f8a5c2;
+}
+.slideshow-progress {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.slideshow-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #d46a8c, #f8a5c2);
+    border-radius: 4px;
+    transition: width 0.3s linear;
+}
