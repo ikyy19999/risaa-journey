@@ -10,26 +10,36 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">Risaa</div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#timeline" class="nav-link">Timeline</a></li>
-                <li class="nav-item"><a href="#story" class="nav-link">Story</a></li>
-                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="#playlist" class="nav-link">Our Playlist</a></li>
-                <li class="nav-item"><a href="#love-facts" class="nav-link">Love Facts</a></li>
-                <li class="nav-item"><a href="#notes" class="nav-link">Notes</a></li>
-                <!-- Secret Mailbox link will be added by JS -->
-            </ul>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+     <nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">Risaa</div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#timeline" class="nav-link">Timeline</a></li>
+            <li class="nav-item"><a href="#story" class="nav-link">Story</a></li>
+            <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="#secret-mailbox" class="nav-link">Secret Box</a></li>
+            
+            <!-- Dropdown More -->
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">More ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#playlist" class="nav-link">Our Playlist</a></li>
+                    <li><a href="#love-facts" class="nav-link">Love Facts</a></li>
+                    <li><a href="#user-contributions" class="nav-link">Your Words</a></li>
+                    <li><a href="#notes" class="nav-link">Notes</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <div class="nav-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-    </nav>
+    </div>
+</nav>
+
     <!-- Home Section -->
     <section id="home" class="section home">
         <div class="home-content">
@@ -121,6 +131,34 @@
             <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Almost there…</h3>
             <p style="font-size: 1.3rem; line-height: 1.8;">this page’s still tryna look cute</p>
         </div>
+    </div>
+</section>
+
+<!-- ========== USER MESSAGES & VOICE NOTES SECTION ========== -->
+<section id="user-contributions" class="section">
+    <h2 class="section-title">Ur lil’ notes for our love journey</h2>
+    <div class="love-facts-container"> <!-- Menggunakan class yang sama untuk konsistensi style -->
+
+        <div class="fact-card" style="text-align: center; padding: 40px;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Send us your message now</h3>
+            <p style="font-size: 1.3rem; line-height: 1.8;">We’ll pin it here like a little love souvenir</p>
+        </div>
+        
+        
+    <!-- <div class="fact-card">
+        <h3>Dari: [Nama Pengirim]</h3>
+        <p>[Isi pesan teks dari Telegram]</p>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #777;"><em>Dikirim pada: [Tanggal & Waktu]</em></p>
+    </div>
+       
+    <div class="fact-card">
+        <h3>Dari: [Nama Pengirim]</h3>
+            <audio controls style="width: 100%; margin-top: 15px;">
+                <source src="assets/voices/[nama_file_voice_note].ogg" type="audio/ogg">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #777;"><em>Dari: [Nama Pengirim] | Dikirim pada: [Tanggal & Waktu]</em></p>
+    </div> -->
     </div>
 </section>
 
@@ -217,6 +255,7 @@
     </div>
 
     <!-- Secret Mailbox -->
+     <!-- Secret Mailbox -->
     <div id="secret-mailbox-popup" class="popup-overlay">
         <div class="popup-content secret-mailbox-content">
             <div class="popup-header">
@@ -243,6 +282,25 @@
             </div>
             <div class="popup-footer">
                 <button class="popup-btn secret-mailbox-close">Close Message</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIN Popup -->
+    <div id="pin-popup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>🔒 Enter PIN</h2>
+                <span class="popup-close pin-close">&times;</span>
+            </div>
+            <div class="popup-body" style="text-align: center;">
+                <p>Masukkan PIN untuk membuka Secret Box.</p>
+                <p style="font-size: 0.9rem; color: #888;">Hint: tanyakan Salma atau Rizky terkait PIN tersebut.</p>
+                <input type="password" id="pin-input" maxlength="10" placeholder="PIN" 
+                    style="padding: 12px 20px; font-size: 1.2rem; border-radius: 30px; border: 2px solid #f8a5c2; outline: none; text-align: center; width: 80%; margin-top: 20px;">
+            </div>
+            <div class="popup-footer">
+                <button id="pin-submit" class="popup-btn">Submit</button>
             </div>
         </div>
     </div>

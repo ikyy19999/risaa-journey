@@ -1767,3 +1767,51 @@ body::after {
     border-radius: 4px;
     transition: width 0.3s linear;
 }
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 5px 15px rgba(212, 106, 140, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 180px;
+    z-index: 999;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile: dropdown tetap terlihat saat klik hamburger */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+    }
+    .dropdown-menu a {
+        padding-left: 2rem;
+    }
+}
+#pin-input:focus {
+    border-color: #d46a8c;
+    box-shadow: 0 0 8px rgba(212, 106, 140, 0.3);
+}

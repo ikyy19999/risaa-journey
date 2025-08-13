@@ -67,7 +67,6 @@ const photoData = [
         day: 3, 
         url: 'assets/first date 1.mp4',
         type: 'video',
-        caption: 'First date video 1'
     },
     { 
         year: 2024, 
@@ -75,7 +74,6 @@ const photoData = [
         day: 3, 
         url: 'assets/first date 2.mp4',
         type: 'video',
-        caption: 'First date video 2'
     },
     { 
         year: 2024, 
@@ -83,7 +81,6 @@ const photoData = [
         day: 3, 
         url: 'assets/first date 3.mp4',
         type: 'video',
-        caption: 'First date video 3'
     },
     { 
         year: 2024, 
@@ -91,7 +88,6 @@ const photoData = [
         day: 3, 
         url: 'assets/first date 4.mp4',
         type: 'video',
-        caption: 'First date video 4'
     },
     { 
         year: 2024, 
@@ -99,7 +95,6 @@ const photoData = [
         day: 3, 
         url: 'assets/first date 5.mp4',
         type: 'video',
-        caption: 'First date video 5'
     },
     { 
         year: 2024, 
@@ -107,7 +102,21 @@ const photoData = [
         day: 3, 
         url: 'assets/first date 6.mp4',
         type: 'video',
-        caption: 'First date video 6'
+    },
+    { 
+        year: 2025, 
+        month: 'July', 
+        day: 14, 
+        url: 'assets/Lempuyangan.avif',
+        type: 'image',
+        caption: 'First date video 5'
+    },
+    { 
+        year: 2025, 
+        month: 'July', 
+        day: 15, 
+        url: 'assets/Taman Sari 5.avif',
+        type: 'image',
     },
 ];
 function groupPhotosByDate(photos) {
@@ -425,8 +434,8 @@ document.addEventListener('DOMContentLoaded', function() {
             sendVoiceToTelegram(name, audioBlob);
         }
         async function sendVoiceToTelegram(name, audioBlob) {
-            const BOT_TOKEN = '8472090032:AAH172QfDrXEHXYw-JPIOnMu5oBsiYobVOg'; // << GANTI DENGAN TOKEN BOT ANDA >>
-            const CHAT_ID = '-4938077194'; // << GANTI DENGAN CHAT ID TUJUAN >>
+            const BOT_TOKEN = 'YOUR_TOKEN_HERE'; // << GANTI DENGAN TOKEN BOT ANDA >>
+            const CHAT_ID = 'YOUR_CHAT_ID_HERE'; // << GANTI DENGAN CHAT ID TUJUAN >>
             // Get current time
             const now = new Date();
             const submitTime = now.toLocaleString('id-ID', {
@@ -513,8 +522,8 @@ if (form) {
             timeZoneName: 'short' // Menambahkan zona waktu (misal: WIB)
         });
         // Token dan Chat ID Bot Telegram Anda
-        const BOT_TOKEN = '8472090032:AAH172QfDrXEHXYw-JPIOnMu5oBsiYobVOg'; // << GANTI DENGAN TOKEN BOT ANDA >>
-        const CHAT_ID = '-4938077194'; // << GANTI DENGAN CHAT ID TUJUAN >>
+        const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'; // << GANTI DENGAN TOKEN BOT ANDA >>
+        const CHAT_ID = 'YOUR_CHAT_ID_HERE'; // << GANTI DENGAN CHAT ID TUJUAN >>
         // Format pesan yang akan dikirim ke Telegram, termasuk waktu submit
         const text = `*🌟 NEW MESSAGE FROM RISAA JOURNEY WEBSITE! 🌟*
 *👤 From:* ${name}
@@ -690,11 +699,17 @@ document.addEventListener('dragstart', function(e) {
 
 // ========== SECRET MAILBOX ==========
 document.addEventListener('DOMContentLoaded', function() {
-    const secretMailboxBtn = document.querySelector('a[href="#secret-mailbox"]'); // Tambahkan link di navbar jika diinginkan
+    const secretMailboxBtn = document.querySelector('a[href="#secret-mailbox"]');
     const secretMailboxPopup = document.getElementById('secret-mailbox-popup');
     const secretMailboxCloseBtns = document.querySelectorAll('.secret-mailbox-close');
 
-    // Fungsi untuk membuka popup
+    // Elemen PIN popup
+    const pinPopup = document.getElementById('pin-popup');
+    const pinCloseBtn = document.querySelector('#pin-popup .popup-close'); // khusus pin popup
+    const pinInput = document.getElementById('pin-input');
+    const pinSubmitBtn = document.getElementById('pin-submit');
+
+    // Fungsi buka popup Secret Mailbox
     function openSecretMailbox() {
         if (secretMailboxPopup) {
             secretMailboxPopup.classList.add('show');
@@ -702,7 +717,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Fungsi untuk menutup popup
+    // Fungsi tutup popup Secret Mailbox
     function closeSecretMailbox() {
         if (secretMailboxPopup) {
             secretMailboxPopup.classList.remove('show');
@@ -710,18 +725,73 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Event listeners
+    // Fungsi buka popup PIN
+    function openPinPopup() {
+        if (pinPopup) {
+            pinPopup.classList.add('show');
+            pinInput.value = '';
+            pinInput.focus();
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    // Fungsi tutup popup PIN
+    function closePinPopup() {
+        if (pinPopup) {
+            pinPopup.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Klik tombol Secret Box → buka popup PIN
     if (secretMailboxBtn) {
         secretMailboxBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            openSecretMailbox();
+            openPinPopup();
         });
     }
 
+    // Fungsi cek PIN
+    function checkPin() {
+        const correctPin = "1234"; // ganti sesuai PIN
+        if (pinInput.value === correctPin) {
+            closePinPopup();
+            openSecretMailbox();
+        } else {
+            alert("PIN salah. Akses ditolak.");
+            pinInput.value = '';
+            pinInput.focus();
+        }
+    }
+
+    // Event submit PIN
+    if (pinSubmitBtn) {
+        pinSubmitBtn.addEventListener('click', checkPin);
+    }
+
+    // Tekan Enter untuk submit PIN
+    if (pinInput) {
+        pinInput.addEventListener('keyup', function(e) {
+            if (e.key === "Enter") {
+                checkPin();
+            }
+        });
+    }
+
+    // Tutup popup PIN (klik X atau luar area)
+    if (pinCloseBtn) {
+        pinCloseBtn.addEventListener('click', closePinPopup);
+    }
+    if (pinPopup) {
+        pinPopup.addEventListener('click', function(e) {
+            if (e.target === pinPopup) closePinPopup();
+        });
+    }
+
+    // Tutup popup Secret Mailbox
     secretMailboxCloseBtns.forEach(btn => {
         btn.addEventListener('click', closeSecretMailbox);
     });
-
     if (secretMailboxPopup) {
         secretMailboxPopup.addEventListener('click', function(e) {
             if (e.target === secretMailboxPopup) {
@@ -730,6 +800,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 // ========== TIMELINE INTERAKTIF DINAMIS ==========
 document.addEventListener('DOMContentLoaded', function() {
