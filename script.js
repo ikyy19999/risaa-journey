@@ -434,8 +434,8 @@ document.addEventListener('DOMContentLoaded', function() {
             sendVoiceToTelegram(name, audioBlob);
         }
         async function sendVoiceToTelegram(name, audioBlob) {
-            const BOT_TOKEN = 'YOUR_TOKEN_HERE'; // << GANTI DENGAN TOKEN BOT ANDA >>
-            const CHAT_ID = 'YOUR_CHAT_ID_HERE'; // << GANTI DENGAN CHAT ID TUJUAN >>
+            const BOT_TOKEN = '8472090032:AAEPOPnf8SeMSz_0Nmh1C3RMfqJImAbrbYk'; // << GANTI DENGAN TOKEN BOT ANDA >>
+            const CHAT_ID = '-4938077194'; // << GANTI DENGAN CHAT ID TUJUAN >>
             // Get current time
             const now = new Date();
             const submitTime = now.toLocaleString('id-ID', {
@@ -522,8 +522,8 @@ if (form) {
             timeZoneName: 'short' // Menambahkan zona waktu (misal: WIB)
         });
         // Token dan Chat ID Bot Telegram Anda
-        const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'; // << GANTI DENGAN TOKEN BOT ANDA >>
-        const CHAT_ID = 'YOUR_CHAT_ID_HERE'; // << GANTI DENGAN CHAT ID TUJUAN >>
+        const BOT_TOKEN = '8472090032:AAEPOPnf8SeMSz_0Nmh1C3RMfqJImAbrbYk'; // << GANTI DENGAN TOKEN BOT ANDA >>
+        const CHAT_ID = '-4938077194'; // << GANTI DENGAN CHAT ID TUJUAN >>
         // Format pesan yang akan dikirim ke Telegram, termasuk waktu submit
         const text = `*🌟 NEW MESSAGE FROM RISAA JOURNEY WEBSITE! 🌟*
 *👤 From:* ${name}
@@ -753,7 +753,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fungsi cek PIN
     function checkPin() {
-        const correctPin = "1234"; // ganti sesuai PIN
+        const correctPin = "11082024"; // ganti sesuai PIN
         if (pinInput.value === correctPin) {
             closePinPopup();
             openSecretMailbox();
