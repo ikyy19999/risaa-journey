@@ -578,33 +578,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const popup = document.getElementById('welcome-popup');
     const closeBtn = document.querySelector('.popup-close');
     const acceptBtn = document.getElementById('popup-accept');
-    const loader = document.getElementById('loader');
-    
     if (popup) {
-        // Show loader first, then show popup after 5 seconds
+        // Show popup immediately when page loads
         setTimeout(() => {
-            loader.classList.add('hidden');
             popup.classList.add('show');
             document.body.style.overflow = 'hidden';
-        }, 5000);
-        
+        }, 1000);
         // Close popup functions
         function closePopup() {
             popup.classList.remove('show');
             document.body.style.overflow = 'auto';
         }
-        
         // Event listeners
         if (closeBtn) closeBtn.addEventListener('click', closePopup);
         if (acceptBtn) acceptBtn.addEventListener('click', closePopup);
-        
         // Close popup when clicking outside
         popup.addEventListener('click', function(e) {
             if (e.target === popup) {
                 closePopup();
             }
         });
-        
         // Close popup with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && popup.classList.contains('show')) {
